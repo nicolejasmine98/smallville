@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+$primary-color: #333;
+$white: #fff;
+
+
+body{
+    color:$primary-color;
+    padding:0;
+    margin:0;
+    position:relative;
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: 'Open Sans', 'sans serif';
+    font-size: 14px;
+}
+
+
+.container{
+    display:flex;
+    flex-flow:row wrap;
+    .sidebar{
+        background-color:$primary-color;
+        color:$white;
+        width:20%;
+        height:100%;
+        padding:0 1 rem;
+        position: fixed;
+        top:0;
+        left:0;
+
+    }
+}

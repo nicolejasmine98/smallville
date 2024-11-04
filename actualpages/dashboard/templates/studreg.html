@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 15%;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<ul>
+  <li><a class="active" href="{% url 'home'%}">Home</a></li>
+  <li><a href="{% url 'studreg'%}">Student Registration</a></li>
+  <li><a href="{% url 'classsched'%}">Class Schedule</a></li>
+  <li><a href="{% url 'payment'%}">Payment</a></li>
+  <li><a href="{% url 'teachstudlist'%}">Teacher Student List</a></li>
+  <li><a href="{% url 'teachclasssched'%}">Teacher Schedule Assign</a></li>
+</ul>
+
+<div style="margin-left:15%;padding:1px 16px;height:1000px;">
+  <h2>This is the Student Registration</h2>
+  <h3>YOU SHOULD ADD BUTTONS/HREF FOR ADDING STUDENTS AND EDITING STUDENTS :>.</h3>
+  <p>Also notice that we have set overflow:auto to sidenav. This will add a scrollbar when the sidenav is too long (for example if it has over 50 links inside of it).</p>
+  <p>Some text..</p>
+  <p>Some text..</p>
+  <p>Some text..</p>
+  <p>Some text..</p>
+  <p>Some text..</p>
+  <p>Some text..</p>
+  <p>Some text..</p>
+</div>
+
+</body>
+</html>
