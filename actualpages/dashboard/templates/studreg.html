@@ -33,6 +33,13 @@ li a:hover:not(.active) {
   background-color: #555;
   color: white;
 }
+
+.right-button {
+  position: absolute;
+  right: 20px;
+  top: 50px;
+}
+
 </style>
 </head>
 <body>
@@ -48,6 +55,7 @@ li a:hover:not(.active) {
 
 <div style="margin-left:15%;padding:1px 16px;height:1000px;">
   <h2>This is the Student Registration</h2>
+  <br></br>
   <h3>YOU SHOULD ADD BUTTONS/HREF FOR ADDING STUDENTS AND EDITING STUDENTS :>.</h3>
   <p>Also notice that we have set overflow:auto to sidenav. This will add a scrollbar when the sidenav is too long (for example if it has over 50 links inside of it).</p>
   <p>Some text..</p>
@@ -59,5 +67,8 @@ li a:hover:not(.active) {
   <p>Some text..</p>
 </div>
 
+<a href="{% url 'addstud'%}">
+  <button class="right-button">Add Student</button>
+</a>
 </body>
 </html>

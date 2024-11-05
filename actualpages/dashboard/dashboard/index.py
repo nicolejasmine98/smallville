@@ -30,3 +30,6 @@ def teachstudlist(request):
 
 def uploadpay(request):
     return render(request,'uploadpay.html')
+
+def stud1info(request):
+    return render(request,'stud1info.html')
