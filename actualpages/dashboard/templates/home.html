@@ -1,50 +1,80 @@
 <!DOCTYPE html>
 <html>
-<head>
-<style>
-body {
-  margin: 0;
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 15%;
-  background-color: #f1f1f1;
-  position: fixed;
-  height: 100%;
-  overflow: auto;
-}
-
-li a {
-  display: block;
-  color: #000;
-  padding: 8px 16px;
-  text-decoration: none;
-}
-
-li a.active {
-  background-color: #04AA6D;
-  color: white;
-}
-
-li a:hover:not(.active) {
-  background-color: #555;
-  color: white;
-}
-</style>
-</head>
-<body>
-
-<ul>
-  <li><a class="active" href="#home">Home</a></li>
-  <li><a href="{% url 'studreg'%}">Student Registration</a></li>
-  <li><a href="{% url 'classsched'%}">Class Schedule</a></li>
-  <li><a href="{% url 'payment'%}">Payment</a></li>
-  <li><a href="{% url 'teachstudlist'%}">Teacher Student List</a></li>
-  <li><a href="{% url 'teachclasssched'%}">Teacher Schedule Assign</a></li>
-</ul>
+  <head>
+    <style>
+      body {
+      margin: 2 px;
+      font-family: Arial, Helvetica, sans-serif;
+      }
+    
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 15%;
+        background-color: #f1f1f1;
+        position: fixed;
+        height: 100%;
+        overflow: auto;
+      }
+    
+      li a {
+        display: block;
+        color: #000;
+        padding: 8px 16px;
+        text-decoration: none;
+      }
+    
+      li a.active {
+        background-color: #04AA6D;
+        color: white;
+      }
+    
+      li a:hover:not(.active) {
+        background-color: #555;
+        color: white;
+      }
+    
+      .signout a:hover:not(.active){
+        background-color: #555;
+        color: white;
+      }
+      .sidenav {
+         list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 15%;
+        background-color: #f1f1f1;
+        position: fixed;
+        height: 100%;
+        overflow: auto;
+    }
+      
+      .nav-image {
+      width: 100%; /* Make image full width */
+      height: auto; /* Maintain aspect ratio */
+      }
+      
+      .sidenav ul {
+      margin-top: 20px; /* Space between image and list */
+    }
+      
+    </style>
+  </head>
+  <body>
+  <div class="sidenav">
+      <img src="C:/Users/nicol/OneDrive/DocsSchool/4TH YEAR/IE 172/workspaces/smallvillelogo.jpg" alt="School Logo" class="nav-image">
+    <ul>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="{% url 'studreg'%}">Student Registration</a></li>
+        <li><a href="{% url 'classsched'%}">Class Schedule</a></li>
+        <li><a href="{% url 'payment'%}">Payment</a></li>
+        <li><a href="{% url 'teachstudlist'%}">Teacher Student List</a></li>
+        <li><a href="{% url 'teachclasssched'%}">Teacher Schedule Assign</a></li>
+        <li><a class="signout" href="#">Sign Out</a></li>
+    </ul>
+  </div>
+  
 
 <div style="margin-left:15%;padding:1px 16px;height:1000px;">
   <h2>This is the Home Page</h2>
