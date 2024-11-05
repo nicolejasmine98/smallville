@@ -38,10 +38,10 @@ li a:hover:not(.active) {
 <body>
 
 <ul>
-  <li><a class="active" href="{% url 'home'%}">Home</a></li>
+  <li><a href="{% url 'home'%}">Home</a></li>
   <li><a href="{% url 'studreg'%}">Student Registration</a></li>
   <li><a href="{% url 'classsched'%}">Class Schedule</a></li>
-  <li><a href="{% url 'payment'%}">Payment</a></li>
+  <li><a class="active" href="{% url 'payment'%}">Payment</a></li>
   <li><a href="{% url 'teachstudlist'%}">Teacher Student List</a></li>
   <li><a href="{% url 'teachclasssched'%}">Teacher Schedule Assign</a></li>
 </ul>
