@@ -31,5 +31,5 @@ urlpatterns = [
     path('assignSched',index.teachclasssched, name='teachclasssched'),
     path('studentList',index.teachstudlist, name='teachstudlist'),
     path('uploadPay',index.uploadpay, name='uploadpay'),
-    path('studentInfo', index.stud1info, name='stud1info'),
+    path('studentInfoParent', index.stud1info, name='stud1info'),
 ]
