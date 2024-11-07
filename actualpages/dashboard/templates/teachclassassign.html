@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 15%;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+
+li a.active {
+  background-color: #0e392d;
+  color: white;
+}
+
+
+li a:hover:not(.active) {
+  background-color: #6d9773;
+  color: white;
+}
+
+
+.right-button {
+  position: absolute;
+  right: 20px;
+  top: 70px;
+}
+
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+}
+
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(22px);
+  -ms-transform: translateX(22px);
+  transform: translateX(22px);
+}
+
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 25px;
+}
+
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+
+
+.sidenav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 15%;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+     
+.nav-image {
+    width: 100%; /* Make image full width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
+.sidenav ul {
+    margin-top: 20px; /* Space between image and list */
+}
+
+
+h2 {
+    color: #003093
+}
+
+
+h3 {
+    color: #003093
+}
+ 
+table {
+  width: 100%;
+  border-collapse: collapse;
+  -moz-box-shadow: 0 0 5px #888;
+  -webkit-box-shadow: 0 0 5px#888;
+  box-shadow: 0 0 5px #888;
+  border-radius:5px;
+  text-decoration: none;
+  /* height: 100px; */
+}
+
+
+th, tr, td {
+  /* color: #000000; */
+  /* border: 2px solid #b1b0b0; */
+  border-radius: 1px;
+  padding: 8px 8px;
+  text-align: center;
+}
+
+
+td.cell {
+  font-weight: lighter;
+  width: 1500px;
+}
+
+
+th, td {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+
+tr.first {
+  background-color: #003093;
+  color:#f1f1f1;
+}
+
+
+.right-button {
+  position: absolute;
+  right: 20px;
+  top: 380px;
+  background-color: #ffb902;
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  border-radius: 4px;
+}
+
+
+.right-button:hover {
+  background-color: #ffe878;
+  color: white;
+}
+
+
+.return-button {
+    position: absolute;
+    left: 16%;
+    top: 100px;
+    background-color: #6e9673;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: right;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    transition-duration: 0.4s;
+    border-radius: 4px;
+}
+
+
+.return-button:hover {
+  background-color: #bbdabb;
+  color: white;
+}
+
+
+</style>
+</head>
+<body>
+
+
+<div class="sidenav">
+    <img src="C:/Users/nicol/OneDrive/DocsSchool/4TH YEAR/IE 172/workspaces/smallvillelogo.jpg" alt="School Logo" class="nav-image">
+  <ul>
+      <li><a href="{% url 'home'%}">Home</a></li>
+      <li><a href="{% url 'studreg'%}">Student Registration</a></li>
+      <li><a href="{% url 'classsched'%}">Class Schedule</a></li>
+      <li><a href="{% url 'payment'%}">Payment</a></li>
+      <li><a href="{% url 'teachstudlist'%}">Teacher Student List</a></li>
+      <li><a class="active" href="{% url 'teachclasssched'%}">Teacher Schedule Assign</a></li>
+      <li><a class="signout" href="#">Sign Out</a></li>
+  </ul>
+</div>
+
+
+<div style="margin-left:15%;padding:1px 16px;height:500px;">
+  <h2>Class Assignment</h2>
+  <p>Use this page to manage class enrollments. Use the options below to assign enrolled students to their respective classes. </p>
+  <br></br>
+  <h3>Student List</h3>
+    <table>
+        <tr class="first">
+            <th class="head">Student Name</th>
+            <th class="head">Add to class</th>
+        </tr>
+        <tr>
+            <td class = "button">student1</td>
+            <td>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </td>
+            </tr>
+            <tr>
+
+
+        <tr>
+            <td class = "button">student1</td>
+            <td>
+                <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+            </td>
+        </tr>
+    </table>
+
+
+</div>
+
+
+<a href="{% url 'teachclasssched'%}">
+    <button class="right-button">Save changes</button>
+</a>
+
+
+<a href="{% url 'teachstudlist'%}">
+    <button class="return-button">Return</button>
+</a>
+
+
+</body>
+</html>

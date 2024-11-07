@@ -3,36 +3,65 @@
 <head>
 <style>
 body {
-  margin: 0;
-}
+      margin: 0px;
+      font-family: Arial, Helvetica, sans-serif;
+      }
+   
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 15%;
+        background-color: #f1f1f1;
+        position: fixed;
+        height: 100%;
+        overflow: auto;
+      }
+   
+      li a {
+        display: block;
+        color: #000;
+        padding: 8px 16px;
+        text-decoration: none;
+      }
+   
+      li a.active {
+        background-color: #0e392d;
+        color: white;
+      }
+   
+      li a:hover:not(.active) {
+        background-color: #6d9773;
+        color: white;
+      }
+   
+      .sidenav {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 15%;
+        background-color: #f1f1f1;
+        position: fixed;
+        height: 100%;
+        overflow: auto;
+    }
+     
+      .nav-image {
+      width: 100%; /* Make image full width */
+      height: auto; /* Maintain aspect ratio */
+      }
+     
+      .sidenav ul {
+      margin-top: 20px; /* Space between image and list */
+      }
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 15%;
-  background-color: #f1f1f1;
-  position: fixed;
-  height: 100%;
-  overflow: auto;
-}
+      h2 {
+      color: #003093
+      }
 
-li a {
-  display: block;
-  color: #000;
-  padding: 8px 16px;
-  text-decoration: none;
-}
-
-li a.active {
-  background-color: #04AA6D;
-  color: white;
-}
-
-li a:hover:not(.active) {
-  background-color: #555;
-  color: white;
-}
+      h3 {
+      color: #003093
+      }
 
 .right-button {
   position: absolute;
@@ -41,45 +70,97 @@ li a:hover:not(.active) {
 }
 
 .return-button {
-    position: absolute;
+    /* position: absolute; */
     left: 16%;
     top: 50px;
-    padding: 2px;
+    background-color: #6e9673;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: right;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    transition-duration: 0.4s;
+    border-radius: 4px;
+}
+
+.return-button:hover {
+  background-color: #bbdabb;
+  color: white;
+}
+
+.bot {
+  background-color: #ffb902;
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  border-radius: 4px;
+}
+
+.bot:hover {
+  background-color: #ffe878;
+  color: white;
+}
+
+label {
+    display: inline-block;
+    width: 150px; 
+    text-align: right;
+    margin-right: 10px;
+}
+
+input {
+    width: 200px; 
+}
+
+label {
+  padding: 6px
 }
 
 </style>
 </head>
 <body>
 
-<ul>
-  <li><a href="{% url 'home'%}">Home</a></li>
-  <li><a class="active" href="{% url 'studreg'%}">Student Registration</a></li>
-  <li><a href="{% url 'classsched'%}">Class Schedule</a></li>
-  <li><a href="{% url 'payment'%}">Payment</a></li>
-  <li><a href="{% url 'teachstudlist'%}">Teacher Student List</a></li>
-  <li><a href="{% url 'teachclasssched'%}">Teacher Schedule Assign</a></li>
-</ul>
-
-<div style="margin-left:15%;padding:1px 16px;height:1000px;">
-  <h2>This is the Student Registration [VIEW]</h2>
-  <br></br>
-  <h3>YOU SHOULD ADD BUTTONS/HREF FOR ADDING STUDENTS AND EDITING STUDENTS :>.</h3>
-  <p>Also notice that we have set overflow:auto to sidenav. This will add a scrollbar when the sidenav is too long (for example if it has over 50 links inside of it).</p>
-  <p>Some text..</p>
-  <p>Some text..</p>
-  <p>Some text..</p>
-  <p>Some text..</p>
-  <p>Some text..</p>
-  <p>Some text..</p>
-  <p>Some text..</p>
+  <div class="sidenav">
+    <img src="C:/Users/nicol/OneDrive/DocsSchool/4TH YEAR/IE 172/workspaces/smallvillelogo.jpg" alt="School Logo" class="nav-image">
+  <ul>
+    <li><a href="{% url 'home'%}">Home</a></li>
+    <li><a class="active" href="{% url 'studreg'%}">Student Registration</a></li>
+    <li><a href="{% url 'classsched'%}">Class Schedule</a></li>
+    <li><a href="{% url 'payment'%}">Payment</a></li>
+    <li><a href="{% url 'teachstudlist'%}">Teacher Student List</a></li>
+    <li><a href="{% url 'teachclasssched'%}">Teacher Schedule Assign</a></li>
+    <li><a class="signout" href="#">Sign Out</a></li>
+  </ul>
 </div>
 
-<a href="{% url 'studreg'%}">
+<div style="margin-left:15%;padding:1px 16px;height:400px;">
+  <h2>Student Registration: ADD</h2>
+  <a href="{% url 'studreg'%}">
     <button class="return-button">Return</button>
   </a>
+  
+  <h3>Registration Form</h3>
+  <p>To start your child's enrollment to Smallville Montessori, please fill out the form that will be reviewed by our enrollment officer.</p>
+  <label for="fname">Name:</label>
+  <input type="text" id="fname" name="fname"><br>
+  <label for="age">Age:</label>
+  <input type="text" id="age" name="age"><br>
+  <label for="loc">Address:</label>
+  <input type="text" id="loc" name="loc"><br>
+  <label for="glevel">Grade Level:</label>
+  <input type="text" id="glevel" name="glevel"><br>
+</div>
 
-<a href="{% url 'editstud'%}">
-  <button class="right-button">Edit</button>
-</a>
+  <div style="margin-right: 40px; text-align: right;" >
+    <button type="button" class="bot">Cancel</button>
+    <button type="submit" class="bot">Submit</button>
+  </div>
 </body>
 </html>

@@ -2,9 +2,10 @@
 <html>
 <head>
 <style>
-body {
-  margin: 0;
-}
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
 
 ul {
   list-style-type: none;
@@ -17,6 +18,7 @@ ul {
   overflow: auto;
 }
 
+
 li a {
   display: block;
   color: #000;
@@ -24,40 +26,253 @@ li a {
   text-decoration: none;
 }
 
+
 li a.active {
-  background-color: #04AA6D;
+  background-color: #0e392d;
   color: white;
 }
+
 
 li a:hover:not(.active) {
-  background-color: #555;
+  background-color: #6d9773;
   color: white;
 }
+
+
+table, th, tr, td {
+  color: #000000;
+  background-color: #ffffff;
+  border-radius: 1px;
+  padding: 4px 8px;
+  text-align: center;
+}
+
+th {
+  background-color: #003093;
+  color: white;
+}
+th, td {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  -moz-box-shadow: 0 0 5px #888;
+  -webkit-box-shadow: 0 0 5px#888;
+  box-shadow: 0 0 5px #888;
+  border-radius:5px;
+}
+
+
+th {
+  height: 30px;
+}
+
+
+th.name {
+  width: 40%;
+}
+
+
+th.payment, th.enrollment {
+  width: 20%;
+}
+
+
+h2 {
+  color: #003093
+  }
+
+
+h4 {
+  color: #003093
+  }
+
+
+.sidenav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 15%;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+     
+.nav-image {
+  width: 100%; /* Make image full width */
+  height: auto; /* Maintain aspect ratio */
+  }
+     
+.sidenav ul {
+  margin-top: 20px; /* Space between image and list */
+  }
+
+
+.container {
+    margin: 20px;
+}
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+.dropdown select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+.schedule-content {
+    display: none;
+}
+.schedule-content:target {
+    display: block;
+}
+
+
 </style>
 </head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <body>
 
-<ul>
-  <li><a href="{% url 'home'%}">Home</a></li>
-  <li><a href="{% url 'studreg'%}">Student Registration</a></li>
-  <li><a class="active" href="{% url 'classsched'%}">Class Schedule</a></li>
-  <li><a href="{% url 'payment'%}">Payment</a></li>
-  <li><a href="{% url 'teachstudlist'%}">Teacher Student List</a></li>
-  <li><a href="{% url 'teachclasssched'%}">Teacher Schedule Assign</a></li>
-</ul>
+
+<div class="sidenav">
+  <img src="C:\Users\nicol\OneDrive\DocsSchool\4TH YEAR\IE 172\workspaces\smallville\actualpages\dashboard\templates\smallvillelogo.jpg" alt="School Logo" class="nav-image">
+  <ul>
+    <li><a href="{% url 'home'%}">Home</a></li>
+    <li><a href="{% url 'studreg'%}">Student Registration</a></li>
+    <li><a class="active"href="{% url 'classsched'%}">Class Schedule</a></li>
+    <li><a href="{% url 'payment'%}">Payment</a></li>
+    <li><a href="{% url 'teachstudlist'%}">Teacher Student List</a></li>
+    <li><a href="{% url 'teachclasssched'%}">Teacher Schedule Assign</a></li>
+    <li><a class="signout" href="#">Sign Out</a></li>  
+  </ul>
+</div>
+
 
 <div style="margin-left:15%;padding:1px 16px;height:1000px;">
-  <h2>This is the Class Schedule Page</h2>
-  <h3>Mainly for viewing the schedules ng mga anak ng parents</h3>
-  <p>Also notice that we have set overflow:auto to sidenav. This will add a scrollbar when the sidenav is too long (for example if it has over 50 links inside of it).</p>
-  <p>Some text..</p>
-  <p>Some text..</p>
-  <p>Some text..</p>
-  <p>Some text..</p>
-  <p>Some text..</p>
-  <p>Some text..</p>
-  <p>Some text..</p>
+  <h2>Class Schedule</h2>
+  <h4>Use this page to view the class schedule assigned to your child.</h4>
+
+  <br>
+  <div class="dropdown">
+    <label for="student-name">Select Student:</label>
+    <select id="student-name" onchange="location = this.value;">
+        <option value="#choose">--Choose a student--</option>
+        <option value="#student1-schedule">Student 1</option>
+        <option value="#student2-schedule">Student 2</option>
+        <option value="#student3-schedule">Student 3</option>
+    </select>
+  </div>
+
+  <div style="padding:1px 16px;height:1000px;">
+    <div id="choose" class="schedule-content">
+      <p>Select a student to view their class schedule.</p>
+    </div>
+
+    <!-- Schedule content for each student -->
+    <div id="student1-schedule" class="schedule-content">
+        <h2>Student 1's Schedule</h2>
+        <table>
+          <tr>
+            <th class = 'class'>Class</th>
+            <th class = 'teacher'>Teacher</th>
+            <th class = 'schedule'>Schedule</th>
+          </tr>
+          <tr>
+            <td>Subject 1</td>
+            <td>Teacher 1</td>
+            <td>MWF<br>10:00 AM-11:00 AM</td>
+          </tr>
+          <tr>
+            <td>Subject 2</td>
+            <td>Teacher 2</td>
+            <td>MWF<br>11:00 AM-12:00 PM</td>
+          </tr>
+          <tr>
+            <td>Subject 3</td>
+            <td>Teacher 3</td>
+            <td>TTh<br>12:00 PM-1:00 PM</td>
+          </tr>
+          <tr>
+            <td>Subject 4</td>
+            <td>Teacher 4</td>
+            <td>TTh<br>1:00 PM-2:00 PM</td>
+          </tr>
+        </table>
+    </div>
+
+
+    <div id="student2-schedule" class="schedule-content">
+        <h2>Student 2's Schedule</h2>
+        <table>
+          <tr>
+            <th class = 'class'>Class</th>
+            <th class = 'teacher'>Teacher</th>
+            <th class = 'schedule'>Schedule</th>
+          </tr>
+          <tr>
+            <td>Subject 4</td>
+            <td>Teacher 1</td>
+            <td>MWF<br>10:00 AM-11:00 AM</td>
+          </tr>
+          <tr>
+            <td>Subject 3</td>
+            <td>Teacher 2</td>
+            <td>MWF<br>11:00 AM-12:00 PM</td>
+          </tr>
+          <tr>
+            <td>Subject 1</td>
+            <td>Teacher 3</td>
+            <td>TTh<br>12:00 PM-1:00 PM</td>
+          </tr>
+          <tr>
+            <td>Subject 1</td>
+            <td>Teacher 2</td>
+            <td>TTh<br>1:00 PM-2:00 PM</td>
+          </tr>
+        </table>
+    </div>
+
+
+    <div id="student3-schedule" class="schedule-content">
+        <h2>Student 3's Schedule</h2>
+        <table>
+          <tr>
+            <th class = 'class'>Class</th>
+            <th class = 'teacher'>Teacher</th>
+            <th class = 'schedule'>Schedule</th>
+          </tr>
+          <tr>
+            <td>Subject 3</td>
+            <td>Teacher 4</td>
+            <td>MWF<br>10:00 AM-11:00 AM</td>
+          </tr>
+          <tr>
+            <td>Subject 2</td>
+            <td>Teacher 5</td>
+            <td>MWF<br>11:00 AM-12:00 PM</td>
+          </tr>
+          <tr>
+            <td>Subject 4</td>
+            <td>Teacher 6</td>
+            <td>TTh<br>12:00 PM-1:00 PM</td>
+          </tr>
+          <tr>
+            <td>Subject 1</td>
+            <td>Teacher 3</td>
+            <td>TTh<br>1:00 PM-2:00 PM</td>
+          </tr>
+        </table>
+    </div>
+  </div>
 </div>
+
 
 </body>
 </html>

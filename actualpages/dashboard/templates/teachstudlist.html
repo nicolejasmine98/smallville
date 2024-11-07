@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
+
+
+
 
 ul {
   list-style-type: none;
@@ -17,6 +22,9 @@ ul {
   overflow: auto;
 }
 
+
+
+
 li a {
   display: block;
   color: #000;
@@ -24,40 +32,203 @@ li a {
   text-decoration: none;
 }
 
+
+
+
 li a.active {
-  background-color: #04AA6D;
+  background-color: #0e392d;
+  color: white;
+}
+   
+li a:hover:not(.active) {
+  background-color: #6d9773;
   color: white;
 }
 
-li a:hover:not(.active) {
-  background-color: #555;
+
+.search {
+  text-align: right;
+  margin-bottom: 10px;
+  height: 40px;
+}
+
+
+.search input[type=text] {
+  padding: 6px;
+  bottom: 5px;
+  border: none;
+  border-radius: 4px;
+  -moz-box-shadow: 0 0 5px #888;
+  -webkit-box-shadow: 0 0 5px#888;
+  box-shadow: 0 0 5px #888;
+}
+
+
+.search-button {
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 5px;
+  color: black;
+  background: #7896fb;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+
+select {
+  padding: 6px;
+  bottom: 5px;
+  border: 1px solid #003093;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  -moz-box-shadow: 0 0 5px #888;
+  -webkit-box-shadow: 0 0 5px#888;
+  box-shadow: 0 0 5px #888;
+}
+
+
+table, th, tr, td {
+  color: #000000;
+  background-color: #ffffff;
+  border-radius: 1px;
+  padding: 4px 8px;
+  text-align: center;
+}
+
+
+th {
+  background-color: #003093;
   color: white;
 }
+th, td {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  -moz-box-shadow: 0 0 5px #888;
+  -webkit-box-shadow: 0 0 5px#888;
+  box-shadow: 0 0 5px #888;
+  border-radius:5px;
+}
+
+
+th {
+  height: 30px;
+}
+
+
+th.name {
+  width: 40%;
+}
+
+
+th.payment, th.enrollment {
+  width: 20%;
+}
+
+
+h2 {
+  color: #003093
+  }
+
+
+h3 {
+  color: #003093
+  }
+
+
+.sidenav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 15%;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+     
+.nav-image {
+  width: 100%; /* Make image full width */
+  height: auto; /* Maintain aspect ratio */
+  }
+     
+.sidenav ul {
+  margin-top: 20px; /* Space between image and list */
+  }
+
+
 </style>
 </head>
 <body>
 
-<ul>
-  <li><a href="{% url 'home'%}">Home</a></li>
-  <li><a href="{% url 'studreg'%}">Student Registration</a></li>
-  <li><a href="{% url 'classsched'%}">Class Schedule</a></li>
-  <li><a href="{% url 'payment'%}">Payment</a></li>
-  <li><a class="active" href="{% url 'teachstudlist'%}">Teacher Student List</a></li>
-  <li><a href="{% url 'teachclasssched'%}">Teacher Schedule Assign</a></li>
-</ul>
+
+
+
+<div class="sidenav">
+  <img src="C:/Users/nicol/OneDrive/DocsSchool/4TH YEAR/IE 172/workspaces/smallvillelogo.jpg" alt="School Logo" class="nav-image">
+  <ul>
+    <li><a href="{% url 'home'%}">Home</a></li>
+    <li><a href="{% url 'studreg'%}">Student Registration</a></li>
+    <li><a href="{% url 'classsched'%}">Class Schedule</a></li>
+    <li><a href="{% url 'payment'%}">Payment</a></li>
+    <li><a class="active" href="{% url 'teachstudlist'%}">Teacher Student List</a></li>
+    <li><a href="{% url 'teachclasssched'%}">Teacher Schedule Assign</a></li>
+    <li><a class="signout" href="#">Sign Out</a></li>  
+  </ul>
+</div>
+
+
+
 
 <div style="margin-left:15%;padding:1px 16px;height:1000px;">
-  <h2>This is the Teacher's Student List</h2>
-  <h3>Mainly for viewing the the list of registering students YOU SHOULD ADD BUTTONS/HREF FOR VIEWING A SPECIFIC STUDENT INFO</h3>
-  <p>Also notice that we have set overflow:auto to sidenav. This will add a scrollbar when the sidenav is too long (for example if it has over 50 links inside of it).</p>
-  <p>Some text..</p>
-  <p>Some text..</p>
-  <p>Some text..</p>
-  <p>Some text..</p>
-  <p>Some text..</p>
-  <p>Some text..</p>
-  <p>Some text..</p>
+  <h2>Teacher: Student List</h2>
+  <p>This page shows all of the students enrolling under Smallville Montessori. You may utilize the filter and search bar to navigate the name of the students.</p>
+  <div class ="search">
+    <select>
+      <option value="All" selected="">All</option>
+      <option value="academicyear">Academic Year</option>
+      <option value="gradelevel">Grade Level</option>
+      <option value="enrolled">Enrolled</option>
+      <option value="paid">Paid</option>
+    </select>
+    <input type="text" placeholder="Search">
+    <button class="search-button"><i class="fa fa-search"></i></button>
+  </div>
+ 
+  <table>
+    <tr>
+      <th class = 'grade'>Grade Level</th>
+      <th class = 'academic year'>Academic Year</th>
+      <th class = 'name'>Name</th>
+      <th class = 'payment'>Payment Status</th>
+      <th class = 'enrollment'>Enrollment Status</th>  
+    </tr>
+    <tr>
+      <td>insert grade level</td>
+      <td>insert academic year</td>
+      <td><a href="{% url 'teach1studinfo' %}" class="list">Student1</a></td>
+      <td>insert payment status</td>
+      <td>insert enrollment status</td>
+    </tr>
+    <tr>
+      <td>insert grade level</td>
+      <td>insert academic year</td>
+      <td><a href="{% url 'teach1studinfo' %}" class="list">Student2</a></td>
+      <td>insert payment status</td>
+      <td>insert enrollment status</td>
+    </tr>
+  </table>
+
+
 </div>
+
 
 </body>
 </html>

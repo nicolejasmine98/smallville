@@ -1,12 +1,14 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
   <head>
     <style>
       body {
-      margin: 0 px;
+      margin: 0px;
       font-family: Arial, Helvetica, sans-serif;
       }
-    
+   
       ul {
         list-style-type: none;
         margin: 0;
@@ -17,30 +19,26 @@
         height: 100%;
         overflow: auto;
       }
-    
+   
       li a {
         display: block;
         color: #000;
         padding: 8px 16px;
         text-decoration: none;
       }
-    
+   
       li a.active {
-        background-color: #04AA6D;
+        background-color: #0e392d;
         color: white;
       }
-    
+   
       li a:hover:not(.active) {
-        background-color: #555;
+        background-color: #6d9773;
         color: white;
       }
-    
-      .signout a:hover:not(.active){
-        background-color: #555;
-        color: white;
-      }
+   
       .sidenav {
-         list-style-type: none;
+        list-style-type: none;
         margin: 0;
         padding: 0;
         width: 15%;
@@ -49,21 +47,29 @@
         height: 100%;
         overflow: auto;
     }
-      
+     
       .nav-image {
       width: 100%; /* Make image full width */
       height: auto; /* Maintain aspect ratio */
       }
-      
+     
       .sidenav ul {
       margin-top: 20px; /* Space between image and list */
-    }
-      
+      }
+
+      h2 {
+      color: #003093
+      }
+
+      h3 {
+      color: #003093
+      }
+     
     </style>
   </head>
   <body>
   <div class="sidenav">
-      <img src="C:/Users/nicol/OneDrive/DocsSchool/4TH YEAR/IE 172/workspaces/smallvillelogo.jpg" alt="School Logo" class="nav-image">
+      <img src="{% static 'smallvillelogo.jpg' %}" alt="School Logo" class="nav-image">
     <ul>
         <li><a class="active" href="#home">Home</a></li>
         <li><a href="{% url 'studreg'%}">Student Registration</a></li>
@@ -74,10 +80,10 @@
         <li><a class="signout" href="#">Sign Out</a></li>
     </ul>
   </div>
-  
+ 
 
 <div style="margin-left:15%;padding:1px 16px;height:1000px;">
-  <h2>This is the Home Page</h2>
+  <h2>Home Page</h2>
   <h3>Try to scroll this area, and see how the sidenav sticks to the page</h3>
   <p>Notice that this div element has a left margin of 15%. This is because the side navigation is set to 25% width. If you remove the margin, the sidenav will overlay/sit on top of this div.</p>
   <p>Also notice that we have set overflow:auto to sidenav. This will add a scrollbar when the sidenav is too long (for example if it has over 50 links inside of it).</p>

@@ -4,6 +4,7 @@
 <style>
 body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif
 }
 
 ul {
@@ -25,46 +26,186 @@ li a {
 }
 
 li a.active {
-  background-color: #04AA6D;
-  color: white;
+    background-color: #0e392d;
+    color: white;
+      }
+   
+li a:hover:not(.active) {
+    background-color: #6d9773;
+    color: white;
+      }
+.sidenav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 15%;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+     
+.nav-image {
+      width: 100%; /* Make image full width */
+      height: auto; /* Maintain aspect ratio */
+}
+     
+.sidenav ul {
+      margin-top: 20px; /* Space between image and list */
 }
 
-li a:hover:not(.active) {
-  background-color: #555;
-  color: white;
-}
 
 .right-button {
   position: absolute;
   right: 20px;
   top: 50px;
+  background-color: #ffb902;
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  border-radius: 4px;
 }
+
+.right-button:hover {
+  background-color: #ffe878;
+  color: white;
+}
+
+.in-button {
+  /* position: absolute;
+  right: 20px;
+  top: 120px; */
+  background-color: #6e9673;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: right;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  transition-duration: 0.4s;
+  border-radius: 4px;
+
+}
+
+.in-button:hover {
+  background-color: #bbdabb;
+  color: white;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  -moz-box-shadow: 0 0 5px #888;
+  -webkit-box-shadow: 0 0 5px#888;
+  box-shadow: 0 0 5px #888;
+  border-radius:5px;
+  text-decoration: none;
+  /* height: 100px; */
+}
+
+th, tr, td {
+  /* color: #000000; */
+  /* border: 2px solid #b1b0b0; */
+  border-radius: 1px;
+  padding: 8px 8px;
+}
+
+td.cell {
+  font-weight: lighter;
+  width: 1500px;
+}
+
+th, td {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+
+/* 
+.button {
+  color: #000000;
+  background-color: #ffffff;
+  border: 0px solid #ffffff;
+  border-radius: 0px;
+  padding: 0px 8px;
+} */
+
+tr.first {
+  background-color: #003093;
+  color:#f1f1f1;
+}
+
+h2 {
+  color: #003093
+  }
+
+h3 {
+  color: #003093
+  }
+
+
 
 </style>
 </head>
 <body>
 
-<ul>
-  <li><a href="{% url 'home'%}">Home</a></li>
-  <li><a class="active" href="{% url 'studreg'%}">Student Registration</a></li>
-  <li><a href="{% url 'classsched'%}">Class Schedule</a></li>
-  <li><a href="{% url 'payment'%}">Payment</a></li>
-  <li><a href="{% url 'teachstudlist'%}">Teacher Student List</a></li>
-  <li><a href="{% url 'teachclasssched'%}">Teacher Schedule Assign</a></li>
-</ul>
+<div class="sidenav">
+    <img src="C:/Users/nicol/OneDrive/DocsSchool/4TH YEAR/IE 172/workspaces/smallvillelogo.jpg" alt="School Logo" class="nav-image">
+  <ul>
+    <li><a href="{% url 'home'%}">Home</a></li>
+    <li><a class="active" href="{% url 'studreg'%}">Student Registration</a></li>
+    <li><a href="{% url 'classsched'%}">Class Schedule</a></li>
+    <li><a href="{% url 'payment'%}">Payment</a></li>
+    <li><a href="{% url 'teachstudlist'%}">Teacher Student List</a></li>
+    <li><a href="{% url 'teachclasssched'%}">Teacher Schedule Assign</a></li>
+    <li><a class="signout" href="#">Sign Out</a></li>
+  </ul>
+</div>
 
 <div style="margin-left:15%;padding:1px 16px;height:1000px;">
-  <h2>This is the Student Registration</h2>
-  <br></br>
-  <h3>YOU SHOULD ADD BUTTONS/HREF FOR ADDING STUDENTS AND EDITING STUDENTS :>.</h3>
-  <p>Also notice that we have set overflow:auto to sidenav. This will add a scrollbar when the sidenav is too long (for example if it has over 50 links inside of it).</p>
-  <p>Some text..</p>
-  <p>Some text..</p>
-  <p>Some text..</p>
-  <p>Some text..</p>
-  <p>Some text..</p>
-  <p>Some text..</p>
-  <p>Some text..</p>
+  <h2>Student Registration</h2>
+  <h3>Use this page to view your children who have registered to Smallville Montessori.</h3>
+  <table>
+      <tr class="first">
+        <th class="head">#</th>
+        <th class="head">Student Name</th>
+        <th></th>
+      </tr>
+      <tr>
+        <th class = "button">1.</th>
+        <td class="cell">student1</td>
+        <td class = "button">
+          <a href="{% url 'stud1info'%}">
+            <button class="in-button">View</button>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <th>2.</th>
+        <td class="cell">student2</td>
+        <td class = "button">
+          <a href="{% url 'stud1info'%}">
+            <button class="in-button">View</button>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <th>3.</th>
+        <td class="cell">student3</td>
+        <td class = "button">
+          <a href="{% url 'stud1info'%}">
+            <button class="in-button">View</button>
+          </a>
+        </td>
+      </tr>
+    </table>
+
 </div>
 
 <a href="{% url 'addstud'%}">

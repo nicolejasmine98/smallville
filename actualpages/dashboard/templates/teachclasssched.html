@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-body {
+<style>body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 ul {
@@ -25,39 +25,151 @@ li a {
 }
 
 li a.active {
-  background-color: #04AA6D;
+    background-color: #0e392d;
+    color: white;
+}
+   
+li a:hover:not(.active) {
+    background-color: #6d9773;
+    color: white;
+}
+
+.return-button {
+    position: absolute;
+    left: 16%;
+    top: 100px;
+    background-color: #6e9673;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: right;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    transition-duration: 0.4s;
+    border-radius: 4px;
+}
+
+.return-button:hover {
+  background-color: #bbdabb;
   color: white;
 }
 
-li a:hover:not(.active) {
-  background-color: #555;
+.in-button {
+  position: relative;
+  left: 1px;
+  bottom: 1px;
+  background-color: #ffb902;
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  border-radius: 4px;
+}
+
+.in-button:hover {
+  background-color: #ffe878;
   color: white;
 }
+
+h4 {
+  display: block;
+  color: #000000;
+  background-color: #ffffff;
+  border: 2px #000;
+  border-radius: 5px;
+  padding: 8px 16px;
+  text-decoration: none;
+  height: 100px;
+  -moz-box-shadow: 0 0 5px #888;
+-webkit-box-shadow: 0 0 5px#888;
+box-shadow: 0 0 5px #888;
+  width:95%
+}
+
+.box {
+    width: 48%;
+}
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+h2 {
+  color: #003093;
+  }
+
+h3 {
+  color: #003093;
+  }
+
+.sidenav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 15%;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+     
+.nav-image {
+  width: 100%; /* Make image full width */
+  height: auto; /* Maintain aspect ratio */
+  }
+     
+.sidenav ul {
+  margin-top: 20px; /* Space between image and list */
+  }
+
 </style>
 </head>
 <body>
 
-<ul>
-  <li><a href="{% url 'home'%}">Home</a></li>
-  <li><a href="{% url 'studreg'%}">Student Registration</a></li>
-  <li><a href="{% url 'classsched'%}">Class Schedule</a></li>
-  <li><a href="{% url 'payment'%}">Payment</a></li>
-  <li><a href="{% url 'teachstudlist'%}">Teacher Student List</a></li>
-  <li><a class="active" href="{% url 'teachclasssched'%}">Teacher Schedule Assign</a></li>
-</ul>
+    <div class="sidenav">
+        <img src="C:/Users/nicol/OneDrive/DocsSchool/4TH YEAR/IE 172/workspaces/smallvillelogo.jpg" alt="School Logo" class="nav-image">
+      <ul>
+          <li><a href="{% url 'home'%}">Home</a></li>
+          <li><a href="{% url 'studreg'%}">Student Registration</a></li>
+          <li><a href="{% url 'classsched'%}">Class Schedule</a></li>
+          <li><a href="{% url 'payment'%}">Payment</a></li>
+          <li><a class="active" href="{% url 'teachstudlist'%}">Teacher Student List</a></li>
+          <li><a href="{% url 'teachclasssched'%}">Teacher Schedule Assign</a></li>
+          <li><a class="signout" href="#">Sign Out</a></li>
+      </ul>
+    </div>
 
 <div style="margin-left:15%;padding:1px 16px;height:1000px;">
-  <h2>This is the Teacher's Class Schedule</h2>
-  <h3>Mainly for viewing and assigning the class sched -> di ko pa actually alam ano dapat itsura niya </h3>
-  <p>Also notice that we have set overflow:auto to sidenav. This will add a scrollbar when the sidenav is too long (for example if it has over 50 links inside of it).</p>
-  <p>Some text..</p>
-  <p>Some text..</p>
-  <p>Some text..</p>
-  <p>Some text..</p>
-  <p>Some text..</p>
-  <p>Some text..</p>
-  <p>Some text..</p>
+  <h2>Teacher's Student List</h2>
+  <h3>Student 1</h3>
+  <br></br>
+  <div class = "flex-container">
+    <div class = "box">
+        <h4>Student Information</h4>
+        <a href="{% url 'teachstudlist'%}">
+            <button class="in-button">Enroll</button>
+        </a>
+    </div>
+    <div class = "box">
+        <h4>Payment Details</h4>
+        <a href="{% url 'teachstudlist'%}">
+                <button class="in-button">Validate</button>
+        </a>
+    </div>
+  </div>
+ 
 </div>
 
+
+<a href="{% url 'teachstudlist'%}">
+    <button class="return-button">Return</button>
+</a>
 </body>
 </html>
