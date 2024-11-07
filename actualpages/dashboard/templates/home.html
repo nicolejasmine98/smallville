@@ -1,5 +1,3 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -57,19 +55,99 @@
       margin-top: 20px; /* Space between image and list */
       }
 
-      h2 {
-      color: #003093
+      h1 {
+        color: #f1f1f1;
+        background-color: #003093; 
+        padding: 10px; 
+        border-bottom: 2px solid #ddd;
+        font-size: 26px;
+        
       }
 
       h3 {
-      color: #003093
+      color: #f1f1f1;
+      text-align: left;
+      margin: 0px 0px;
       }
      
+      header {
+      background-color: #003093;
+      padding: 10px 20px;
+      text-align: center;
+      margin-left: 192px;
+    }
+
+table, th, tr, td {
+  color: #000000;
+  background-color: #ffffff;
+  border-radius: 1px;
+  padding: 4px 8px;
+  text-align: center;
+}
+th {
+  background-color: #003093;
+  color: white;
+}
+th, td {
+  padding: 13px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+table {
+  width: 98%;
+  border-collapse: collapse;
+  -moz-box-shadow: 0 0 5px #888;
+  -webkit-box-shadow: 0 0 5px#888;
+  box-shadow: 0 0 5px #888;
+  border-radius:5px;
+}
+
+th {
+  height: 30px;
+}
+
+th.name {
+  width: 40%;
+}
+
+tr:hover td {
+  background-color: lightslategrey; 
+}
+
+footer {
+  text-align: center;
+  padding: 6px;
+  background-color: #003093;
+  margin-left: 192 px;
+}
+
+.tab {
+  text-align: left;
+  height: 370px;
+  margin-left: 15.5%;
+}
+
+.w3-bar-item.w3-button.tablink {
+  background-color: #0e392d; /* Inactive tab color */
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+  border: none;
+  cursor: pointer;
+  width: 15%; /* Adjust width as needed */
+}
+
+.w3-bar-item.w3-button.tablink.w3-red {
+  background-color: #ffb902; /* Active tab color */
+  color: white;
+}
+
     </style>
   </head>
   <body>
   <div class="sidenav">
-      <img src="{% static 'smallvillelogo.jpg' %}" alt="School Logo" class="nav-image">
+      <img src="C:/Users/nicol/OneDrive/DocsSchool/4TH YEAR/IE 172/workspaces/smallvillelogo.jpg" alt="School Logo" class="nav-image">
     <ul>
         <li><a class="active" href="#home">Home</a></li>
         <li><a href="{% url 'studreg'%}">Student Registration</a></li>
@@ -81,20 +159,104 @@
     </ul>
   </div>
  
+  <header>
+    <h1>Smallville Montessori - Katipunan</h1>
+    <h3>Welcome _______ ________!</h3>
+  </header>
 
-<div style="margin-left:15%;padding:1px 16px;height:1000px;">
-  <h2>Home Page</h2>
-  <h3>Try to scroll this area, and see how the sidenav sticks to the page</h3>
-  <p>Notice that this div element has a left margin of 15%. This is because the side navigation is set to 25% width. If you remove the margin, the sidenav will overlay/sit on top of this div.</p>
-  <p>Also notice that we have set overflow:auto to sidenav. This will add a scrollbar when the sidenav is too long (for example if it has over 50 links inside of it).</p>
-  <p>Some text..</p>
-  <p>Some text..</p>
-  <p>Some text..</p>
-  <p>Some text..</p>
-  <p>Some text..</p>
-  <p>Some text..</p>
-  <p>Some text..</p>
+<div style="margin-left:15%;padding:1px 5px;height:100px;">
+  <h4>/this will display user number and type of user (student or teacher)/</h4>
+  <p>/This will display smallville montessori introduction -- mission, goals, and other accolades/</p>
 </div>
 
+<div class="tab">
+  <h2>Enroll Now!</h2>
+
+
+  <div class="btab">
+    <button class="w3-bar-item w3-button tablink w3-red" onclick="openTab(event,'ann')">Announcements</button>
+    <button class="w3-bar-item w3-button tablink" onclick="openTab(event,'sched')">Schedules</button>
+    <button class="w3-bar-item w3-button tablink" onclick="openTab(event,'grade')">Grade</button>
+  </div>
+  
+  <div id="ann" class="w3-container w3-border city">
+    <table>
+      <tr>
+        <th>Announcements</th>
+      </tr>
+      <tr>
+        <td>announcement</td>
+      </tr>
+      <tr>
+        <td>announcement</td>
+      </tr>
+      <tr>
+        <td>announcement</td>
+      </tr>
+      <tr>
+        <td>announcement</td>
+      </tr>
+    </table>
+  </div>
+
+  <div id="sched" class="w3-container w3-border city" style="display:none">
+    <table>
+      <tr>
+        <th>Schedule</th>
+      </tr>
+      <tr>
+        <td>schedule</td>
+      </tr>
+      <tr>
+        <td>schedule</td>
+      </tr>
+      <tr>
+        <td>schedule</td>
+      </tr>
+      <tr>
+        <td>schedule</td>
+      </tr>
+    </table>
+  </div>
+
+  <div id="grade" class="w3-container w3-border city" style="display:none">
+    <table>
+      <tr>
+        <th>Grade</th>
+      </tr>
+      <tr>
+        <td>grade</td>
+      </tr>
+      <tr>
+        <td>grade</td>
+      </tr>
+      <tr>
+        <td>grade</td>
+      </tr>
+      <tr>
+        <td>grade</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<script>
+function openTab(evt, cityName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " w3-red";
+}
+</script>
+<footer>
+  <p style="color: #f1f1f1;">&copy; 2024 Smallville Montessori</p>
+</footer>
 </body>
 </html>
