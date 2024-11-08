@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Smallville Montessori Katipunan</title>
     <style>
       body {
       margin: 0px;
       font-family: Arial, Helvetica, sans-serif;
+      
       }
-   
+      
       ul {
         list-style-type: none;
         margin: 0;
@@ -52,16 +54,16 @@
       }
      
       .sidenav ul {
-      margin-top: 20px; /* Space between image and list */
+      margin-top: 0px; /* Space between image and list */
       }
 
       h1 {
         color: #f1f1f1;
-        background-color: #003093; 
-        padding: 10px; 
+        background-color: #003093;
+        padding: 10px;
         border-bottom: 2px solid #ddd;
         font-size: 26px;
-        
+       
       }
 
       h3 {
@@ -74,7 +76,7 @@
       background-color: #003093;
       padding: 10px 20px;
       text-align: center;
-      margin-left: 192px;
+      /* margin-left: 15%; */
     }
 
 table, th, tr, td {
@@ -112,20 +114,20 @@ th.name {
 }
 
 tr:hover td {
-  background-color: lightslategrey; 
+  background-color: lightslategrey;
 }
 
 footer {
   text-align: center;
   padding: 6px;
   background-color: #003093;
-  margin-left: 192 px;
+  /* margin-left: 192 px; */
 }
 
 .tab {
   text-align: left;
   height: 370px;
-  margin-left: 15.5%;
+  margin-left: 30px;
 }
 
 .w3-bar-item.w3-button.tablink {
@@ -143,11 +145,15 @@ footer {
   color: white;
 }
 
+main{
+  margin-left: 15%;
+}
+
     </style>
   </head>
   <body>
   <div class="sidenav">
-      <img src="C:/Users/nicol/OneDrive/DocsSchool/4TH YEAR/IE 172/workspaces/smallvillelogo.jpg" alt="School Logo" class="nav-image">
+      <img src="https://github.com/rielle4k/ie-172/blob/main/301498006_458136916339626_8498308481533025863_n-removebg%20(1)%20(2).png?raw=true" alt="School Logo" class="nav-image">
     <ul>
         <li><a class="active" href="#home">Home</a></li>
         <li><a href="{% url 'studreg'%}">Student Registration</a></li>
@@ -158,15 +164,19 @@ footer {
         <li><a class="signout" href="#">Sign Out</a></li>
     </ul>
   </div>
- 
+ <main>
   <header>
     <h1>Smallville Montessori - Katipunan</h1>
     <h3>Welcome _______ ________!</h3>
   </header>
 
-<div style="margin-left:15%;padding:1px 5px;height:100px;">
+<div style="margin-left:15px;padding:1px 5px;height:100px;">
   <h4>/this will display user number and type of user (student or teacher)/</h4>
-  <p>/This will display smallville montessori introduction -- mission, goals, and other accolades/</p>
+  <p> In Smallville Montessori, we believe in Montessori curriculum the way Maria Montessori herself practiced her teaching.</p>
+  <p> Why choose Smallville Montessori? </p>
+  <p> Child-Centered Learning: Our Montessori approach nurtures independence, curiosity, and a passion for discovery.</p>
+  <p>Inclusive Community: We celebrate every child’s unique journey and learning style.</p>
+  <p> Holistic Development: Focusing on academics, social skills, and emotional growth.</p>
 </div>
 
 <div class="tab">
@@ -178,7 +188,7 @@ footer {
     <button class="w3-bar-item w3-button tablink" onclick="openTab(event,'sched')">Schedules</button>
     <button class="w3-bar-item w3-button tablink" onclick="openTab(event,'grade')">Grade</button>
   </div>
-  
+ 
   <div id="ann" class="w3-container w3-border city">
     <table>
       <tr>
@@ -258,5 +268,6 @@ function openTab(evt, cityName) {
 <footer>
   <p style="color: #f1f1f1;">&copy; 2024 Smallville Montessori</p>
 </footer>
+</main>
 </body>
 </html>

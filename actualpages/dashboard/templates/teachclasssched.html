@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>Smallville Montessori Katipunan</title>
 <style>
+
+
+
+
 
 
 
@@ -10,6 +15,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
 }
+
+
+
+
 
 
 
@@ -28,12 +37,20 @@ ul {
 
 
 
+
+
+
+
 li a {
   display: block;
   color: #000;
   padding: 8px 16px;
   text-decoration: none;
 }
+
+
+
+
 
 
 
@@ -46,10 +63,18 @@ li a.active {
 
 
 
+
+
+
+
 li a:hover:not(.active) {
   background-color: #6d9773;
   color: white;
 }
+
+
+
+
 
 
 
@@ -67,6 +92,10 @@ th {
     background-color: #003093;
     color: white;
 }
+
+
+
+
 
 
 
@@ -126,11 +155,11 @@ h5 {
 }
          
 .sidenav ul {
-    margin-top: 20px; /* Space between image and list */
+    margin-top: 0px; /* Space between image and list */
 }
    
 .dropbtn {
-  background-color: #4CAF50;
+  background-color: #0e392d;
   color: white;
   padding: 16px;
   font-size: 16px;
@@ -141,10 +170,18 @@ h5 {
 
 
 
+
+
+
+
 .dropdown {
   position: relative;
   display: inline-block;
 }
+
+
+
+
 
 
 
@@ -161,6 +198,10 @@ h5 {
 
 
 
+
+
+
+
 .dropdown-content a {
   color: black;
   padding: 12px 16px;
@@ -171,7 +212,15 @@ h5 {
 
 
 
+
+
+
+
 .dropdown-content a:hover {background-color: #f1f1f1}
+
+
+
+
 
 
 
@@ -183,9 +232,17 @@ h5 {
 
 
 
+
+
+
+
 .dropdown:hover .dropbtn {
-  background-color: #3e8e41;
+  background-color: #6d9773;
 }
+
+
+
+
 
 
 
@@ -200,9 +257,13 @@ h5 {
 
 
 
+
+
+
+
 .btn {
     padding: 10px 20px;
-    background-color: #4CAF50;
+    background-color: #ffb902;
     color: white;
     border: none;
     cursor: pointer;
@@ -216,9 +277,18 @@ h5 {
 
 
 
+
+
+
+
 .btn:hover {
-    background-color: #45a049;
+    background-color: #ffe878;
 }
+
+
+h3 {
+  color: #003093
+  }
 </style>
 </head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -227,8 +297,12 @@ h5 {
 
 
 
+
+
+
+
 <div class="sidenav">
-    <img src="C:/Users/nicol/OneDrive/DocsSchool/4TH YEAR/IE 172/workspaces/smallvillelogo.jpg" alt="School Logo" class="nav-image">
+   <img src="https://github.com/rielle4k/ie-172/blob/main/301498006_458136916339626_8498308481533025863_n-removebg%20(1)%20(2).png?raw=true" alt="School Logo" class="nav-image">
     <ul>
         <li><a href="{% url 'home'%}">Home</a></li>
         <li><a href="{% url 'studreg'%}">Student Registration</a></li>
@@ -243,9 +317,17 @@ h5 {
 
 
 
+
+
+
+
 <div style="margin-left:15%;padding:1px 16px;height:1000px;">
-    <h2>This is the Teacher's Class Schedule</h2>
-    <h3>This page is primarily for viewing the class schedules. It also contains links to pages for assigning students and editing schedules.</h3>
+    <h2>Teacher: Class Schedule</h2>
+    <h3>Use this page to view the class schedules. You may also utilize the links to pages for assigning students and editing schedules.</h3>
+
+
+
+
 
 
 
@@ -258,6 +340,10 @@ h5 {
         <a href="#">Grade 3</a>
         </div>
     </div>
+
+
+
+
 
 
 
@@ -294,7 +380,15 @@ h5 {
 
 
 
+
+
+
+
         <br>
+
+
+
+
 
 
 
@@ -307,7 +401,15 @@ h5 {
 
 
 
+
+
+
+
         <br>
+
+
+
+
 
 
 
@@ -344,7 +446,15 @@ h5 {
 
 
 
+
+
+
+
         <br>
+
+
+
+
 
 
 
@@ -353,6 +463,10 @@ h5 {
             <a href="{% url 'teachclassedit'%}" class="btn">Edit</a>
             <a href="{% url 'teachclassassign'%}" class="btn">Add Students</a>
         </div>
+
+
+
+
 
 
 
@@ -391,7 +505,15 @@ h5 {
 
 
 
+
+
+
+
     <br>
+
+
+
+
 
 
 
@@ -402,7 +524,13 @@ h5 {
     </div>
 
 
+
+
     <br>
+
+
+
+
 
 
 

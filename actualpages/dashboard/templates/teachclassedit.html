@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>Smallville Montessori Katipunan</title>
 <style>
+
+
 
 
 body {
@@ -28,12 +31,12 @@ li a {
 }
    
 li a.active {
-    background-color: #04AA6D;
+    background-color: #0e392d;
     color: white;
 }
    
 li a:hover:not(.active) {
-    background-color: #555;
+    background-color: #6d9773;
     color: white;
 }
    
@@ -49,6 +52,8 @@ th {
     background-color: #003093;
     color: white;
 }
+
+
 
 
 th, td {
@@ -106,8 +111,10 @@ h5 {
 }
          
 .sidenav ul {
-    margin-top: 20px; /* Space between image and list */
+    margin-top: 0px; /* Space between image and list */
 }
+
+
 
 
 .button-container {
@@ -118,9 +125,11 @@ h5 {
 }
 
 
+
+
 .btn {
     padding: 10px 20px;
-    background-color: #4CAF50;
+    background-color: #ffb902;
     color: white;
     border: none;
     cursor: pointer;
@@ -132,8 +141,33 @@ h5 {
 }
 
 
+
+
 .btn:hover {
     background-color: #45a049;
+}
+
+
+.return-button {
+    /* position: absolute; */
+    left: 16%;
+    top: 50px;
+    background-color: #6e9673;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: right;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    transition-duration: 0.4s;
+    border-radius: 4px;
+}
+
+
+.return-button:hover {
+  background-color: #bbdabb;
+  color: white;
 }
 </style>
 </head>
@@ -141,8 +175,10 @@ h5 {
 <body>
 
 
+
+
 <div class="sidenav">
-    <img src="C:/Users/nicol/OneDrive/DocsSchool/4TH YEAR/IE 172/workspaces/smallvillelogo.jpg" alt="School Logo" class="nav-image">
+   <img src="https://github.com/rielle4k/ie-172/blob/main/301498006_458136916339626_8498308481533025863_n-removebg%20(1)%20(2).png?raw=true" alt="School Logo" class="nav-image">
     <ul>
         <li><a href="{% url 'home'%}">Home</a></li>
         <li><a href="{% url 'studreg'%}">Student Registration</a></li>
@@ -155,9 +191,16 @@ h5 {
 </div>
 
 
+
+
 <div style="margin-left:15%;padding:1px 16px;height:1000px;">
-    <h2>This is the Class Schedule Edit Page</h2>
+    <h2>Teacher: Class Schedule Edit Page</h2>
     <h3>Use this page to edit the class schedules. Click on a cell to edit the content.</h3>
+    <a href="{% url 'teachclasssched'%}">
+        <button class="return-button">Return</button>
+      </a>
+
+
 
 
     <h2>Schedule 1</h2>
@@ -190,12 +233,18 @@ h5 {
         </table>
 
 
+
+
         <br>
+
+
 
 
     <div class="button-container">
         <a href="{% url 'teachclasssched'%}" class="btn">Save Changes</a>
     </div>
+
+
 
 
 </div>
