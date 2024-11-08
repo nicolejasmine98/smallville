@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+   
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 15%;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+   
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+   
+li a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+   
+li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+   
+table, th, tr, td {
+    color: #000000;
+    background-color: #ffffff;
+    border-radius: 1px;
+    padding: 4px 8px;
+    text-align: center;
+}
+   
+th {
+    background-color: #003093;
+    color: white;
+}
+
+
+th, td {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+   
+table {
+    width: 100%;
+    border-collapse: collapse;
+    -moz-box-shadow: 0 0 5px #888;
+    -webkit-box-shadow: 0 0 5px#888;
+    box-shadow: 0 0 5px #888;
+    border-radius:5px;
+}
+   
+th {
+    height: 30px;
+}
+   
+th.name {
+    width: 40%;
+}
+   
+th.payment, th.enrollment {
+    width: 20%;
+}
+   
+h2 {
+    color: #003093;
+}
+   
+h4 {
+    color: #003093;
+}
+   
+h5 {
+    color: #003093;
+}
+   
+.sidenav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 15%;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+         
+.nav-image {
+    width: 100%; /* Make image full width */
+    height: auto; /* Maintain aspect ratio */
+}
+         
+.sidenav ul {
+    margin-top: 20px; /* Space between image and list */
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-right: 20px;
+}
+
+
+.btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+
+.btn:hover {
+    background-color: #45a049;
+}
+</style>
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<body>
+
+
+<div class="sidenav">
+    <img src="C:/Users/nicol/OneDrive/DocsSchool/4TH YEAR/IE 172/workspaces/smallvillelogo.jpg" alt="School Logo" class="nav-image">
+    <ul>
+        <li><a href="{% url 'home'%}">Home</a></li>
+        <li><a href="{% url 'studreg'%}">Student Registration</a></li>
+        <li><a href="{% url 'classsched'%}">Class Schedule</a></li>
+        <li><a href="{% url 'payment'%}">Payment</a></li>
+        <li><a href="{% url 'teachstudlist'%}">Teacher Student List</a></li>
+        <li><a class="active" href="{% url 'teachclasssched'%}">Teacher Schedule Assign</a></li>
+        <li><a class="signout" href="#">Sign Out</a></li>  
+    </ul>
+</div>
+
+
+<div style="margin-left:15%;padding:1px 16px;height:1000px;">
+    <h2>This is the Class Schedule Edit Page</h2>
+    <h3>Use this page to edit the class schedules. Click on a cell to edit the content.</h3>
+
+
+    <h2>Schedule 1</h2>
+        <table>
+          <tr>
+            <th class = 'class'>Class</th>
+            <th class = 'teacher'>Teacher</th>
+            <th class = 'schedule'>Schedule</th>
+          </tr>
+          <tr>
+            <td contenteditable="true">Subject 1</td>
+            <td contenteditable="true">Teacher 1</td>
+            <td contenteditable="true">MWF<br>10:00 AM-11:00 AM</td>
+          </tr>
+          <tr>
+            <td contenteditable="true">Subject 2</td>
+            <td contenteditable="true">Teacher 2</td>
+            <td contenteditable="true">MWF<br>11:00 AM-12:00 PM</td>
+          </tr>
+          <tr>
+            <td contenteditable="true">Subject 3</td>
+            <td contenteditable="true">Teacher 3</td>
+            <td contenteditable="true">TTh<br>12:00 PM-1:00 PM</td>
+          </tr>
+          <tr>
+            <td contenteditable="true">Subject 4</td>
+            <td contenteditable="true">Teacher 4</td>
+            <td contenteditable="true">TTh<br>1:00 PM-2:00 PM</td>
+          </tr>
+        </table>
+
+
+        <br>
+
+
+    <div class="button-container">
+        <a href="{% url 'teachclasssched'%}" class="btn">Save Changes</a>
+    </div>
+
+
+</div>
+</body>
+</html>

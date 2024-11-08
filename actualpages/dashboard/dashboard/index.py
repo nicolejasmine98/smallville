@@ -36,3 +36,6 @@ def stud1info(request):
 
 def teachclassassign(request):
     return render(request,'teachclassassign.html')
+
+def teachclassedit(request):
+    return render(request,'teachclassedit.html')

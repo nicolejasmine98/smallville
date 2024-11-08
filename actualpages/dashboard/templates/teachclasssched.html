@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>body {
-  margin: 0;
+<style>
+
+
+
+
+body {
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
 }
+
+
+
 
 ul {
   list-style-type: none;
@@ -17,6 +25,9 @@ ul {
   overflow: auto;
 }
 
+
+
+
 li a {
   display: block;
   color: #000;
@@ -24,152 +35,378 @@ li a {
   text-decoration: none;
 }
 
+
+
+
 li a.active {
-    background-color: #0e392d;
-    color: white;
+  background-color: #0e392d;
+  color: white;
+}
+
+
+
+
+li a:hover:not(.active) {
+  background-color: #6d9773;
+  color: white;
+}
+
+
+
+
+   
+table, th, tr, td {
+    color: #000000;
+    background-color: #ffffff;
+    border-radius: 1px;
+    padding: 4px 8px;
+    text-align: center;
 }
    
-li a:hover:not(.active) {
-    background-color: #6d9773;
+th {
+    background-color: #003093;
     color: white;
 }
 
-.return-button {
-    position: absolute;
-    left: 16%;
-    top: 100px;
-    background-color: #6e9673;
-    border: none;
+
+
+
+th, td {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+   
+table {
+    width: 100%;
+    border-collapse: collapse;
+    -moz-box-shadow: 0 0 5px #888;
+    -webkit-box-shadow: 0 0 5px#888;
+    box-shadow: 0 0 5px #888;
+    border-radius:5px;
+}
+   
+th {
+    height: 30px;
+}
+   
+th.name {
+    width: 40%;
+}
+   
+th.payment, th.enrollment {
+    width: 20%;
+}
+   
+h2 {
+    color: #003093;
+}
+   
+h4 {
+    color: #003093;
+}
+   
+h5 {
+    color: #003093;
+}
+   
+.sidenav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 15%;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+         
+.nav-image {
+    width: 100%; /* Make image full width */
+    height: auto; /* Maintain aspect ratio */
+}
+         
+.sidenav ul {
+    margin-top: 20px; /* Space between image and list */
+}
+   
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+
+
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+
+
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+
+
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+
+
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-right: 20px;
+}
+
+
+
+
+.btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
     color: white;
-    padding: 5px 10px;
-    text-align: right;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
     text-decoration: none;
     display: inline-block;
-    font-size: 14px;
-    transition-duration: 0.4s;
-    border-radius: 4px;
+    text-align: center;
 }
 
-.return-button:hover {
-  background-color: #bbdabb;
-  color: white;
+
+
+
+.btn:hover {
+    background-color: #45a049;
 }
-
-.in-button {
-  position: relative;
-  left: 1px;
-  bottom: 1px;
-  background-color: #ffb902;
-  border: none;
-  color: white;
-  padding: 10px 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  transition-duration: 0.4s;
-  border-radius: 4px;
-}
-
-.in-button:hover {
-  background-color: #ffe878;
-  color: white;
-}
-
-h4 {
-  display: block;
-  color: #000000;
-  background-color: #ffffff;
-  border: 2px #000;
-  border-radius: 5px;
-  padding: 8px 16px;
-  text-decoration: none;
-  height: 100px;
-  -moz-box-shadow: 0 0 5px #888;
--webkit-box-shadow: 0 0 5px#888;
-box-shadow: 0 0 5px #888;
-  width:95%
-}
-
-.box {
-    width: 48%;
-}
-.flex-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-h2 {
-  color: #003093;
-  }
-
-h3 {
-  color: #003093;
-  }
-
-.sidenav {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 15%;
-  background-color: #f1f1f1;
-  position: fixed;
-  height: 100%;
-  overflow: auto;
-}
-     
-.nav-image {
-  width: 100%; /* Make image full width */
-  height: auto; /* Maintain aspect ratio */
-  }
-     
-.sidenav ul {
-  margin-top: 20px; /* Space between image and list */
-  }
-
 </style>
 </head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <body>
 
-    <div class="sidenav">
-        <img src="C:/Users/nicol/OneDrive/DocsSchool/4TH YEAR/IE 172/workspaces/smallvillelogo.jpg" alt="School Logo" class="nav-image">
-      <ul>
-          <li><a href="{% url 'home'%}">Home</a></li>
-          <li><a href="{% url 'studreg'%}">Student Registration</a></li>
-          <li><a href="{% url 'classsched'%}">Class Schedule</a></li>
-          <li><a href="{% url 'payment'%}">Payment</a></li>
-          <li><a class="active" href="{% url 'teachstudlist'%}">Teacher Student List</a></li>
-          <li><a href="{% url 'teachclasssched'%}">Teacher Schedule Assign</a></li>
-          <li><a class="signout" href="#">Sign Out</a></li>
-      </ul>
-    </div>
 
-<div style="margin-left:15%;padding:1px 16px;height:1000px;">
-  <h2>Teacher's Student List</h2>
-  <h3>Student 1</h3>
-  <br></br>
-  <div class = "flex-container">
-    <div class = "box">
-        <h4>Student Information</h4>
-        <a href="{% url 'teachstudlist'%}">
-            <button class="in-button">Enroll</button>
-        </a>
-    </div>
-    <div class = "box">
-        <h4>Payment Details</h4>
-        <a href="{% url 'teachstudlist'%}">
-                <button class="in-button">Validate</button>
-        </a>
-    </div>
-  </div>
- 
+
+
+<div class="sidenav">
+    <img src="C:/Users/nicol/OneDrive/DocsSchool/4TH YEAR/IE 172/workspaces/smallvillelogo.jpg" alt="School Logo" class="nav-image">
+    <ul>
+        <li><a href="{% url 'home'%}">Home</a></li>
+        <li><a href="{% url 'studreg'%}">Student Registration</a></li>
+        <li><a href="{% url 'classsched'%}">Class Schedule</a></li>
+        <li><a href="{% url 'payment'%}">Payment</a></li>
+        <li><a href="{% url 'teachstudlist'%}">Teacher Student List</a></li>
+        <li><a class="active" href="{% url 'teachclasssched'%}">Teacher Schedule Assign</a></li>
+        <li><a class="signout" href="#">Sign Out</a></li>  
+    </ul>
 </div>
 
 
-<a href="{% url 'teachstudlist'%}">
-    <button class="return-button">Return</button>
-</a>
+
+
+<div style="margin-left:15%;padding:1px 16px;height:1000px;">
+    <h2>This is the Teacher's Class Schedule</h2>
+    <h3>This page is primarily for viewing the class schedules. It also contains links to pages for assigning students and editing schedules.</h3>
+
+
+
+
+    <div class="dropdown">
+        <button class="dropbtn">Select Grade Level</button>
+        <div class="dropdown-content">
+        <a href="#">Grade 1</a>
+        <a href="#">Grade 2</a>
+        <a href="#">Grade 3</a>
+        </div>
+    </div>
+
+
+
+
+    <h2>Schedule 1</h2>
+        <table>
+          <tr>
+            <th class = 'class'>Class</th>
+            <th class = 'teacher'>Teacher</th>
+            <th class = 'schedule'>Schedule</th>
+          </tr>
+          <tr>
+            <td>Subject 1</td>
+            <td>Teacher 1</td>
+            <td>MWF<br>10:00 AM-11:00 AM</td>
+          </tr>
+          <tr>
+            <td>Subject 2</td>
+            <td>Teacher 2</td>
+            <td>MWF<br>11:00 AM-12:00 PM</td>
+          </tr>
+          <tr>
+            <td>Subject 3</td>
+            <td>Teacher 3</td>
+            <td>TTh<br>12:00 PM-1:00 PM</td>
+          </tr>
+          <tr>
+            <td>Subject 4</td>
+            <td>Teacher 4</td>
+            <td>TTh<br>1:00 PM-2:00 PM</td>
+          </tr>
+        </table>
+
+
+
+
+        <br>
+
+
+
+
+        <div class="button-container">
+            <a href="{% url 'teachclassedit'%}" class="btn">Edit</a>
+            <a href="{% url 'teachclassassign'%}" class="btn">Add Students</a>
+          </div>
+
+
+
+
+        <br>
+
+
+
+
+    <h2>Schedule 2</h2>
+        <table>
+          <tr>
+            <th class = 'class'>Class</th>
+            <th class = 'teacher'>Teacher</th>
+            <th class = 'schedule'>Schedule</th>
+          </tr>
+          <tr>
+            <td>Subject 4</td>
+            <td>Teacher 1</td>
+            <td>MWF<br>10:00 AM-11:00 AM</td>
+          </tr>
+          <tr>
+            <td>Subject 3</td>
+            <td>Teacher 2</td>
+            <td>MWF<br>11:00 AM-12:00 PM</td>
+          </tr>
+          <tr>
+            <td>Subject 1</td>
+            <td>Teacher 3</td>
+            <td>TTh<br>12:00 PM-1:00 PM</td>
+          </tr>
+          <tr>
+            <td>Subject 1</td>
+            <td>Teacher 2</td>
+            <td>TTh<br>1:00 PM-2:00 PM</td>
+          </tr>
+        </table>
+
+
+
+
+        <br>
+
+
+
+
+        <div class="button-container">
+            <a href="{% url 'teachclassedit'%}" class="btn">Edit</a>
+            <a href="{% url 'teachclassassign'%}" class="btn">Add Students</a>
+        </div>
+
+
+
+
+        <br>
+   
+    <h2>Schedule 3</h2>
+        <table>
+          <tr>
+            <th class = 'class'>Class</th>
+            <th class = 'teacher'>Teacher</th>
+            <th class = 'schedule'>Schedule</th>
+          </tr>
+          <tr>
+            <td>Subject 3</td>
+            <td>Teacher 4</td>
+            <td>MWF<br>10:00 AM-11:00 AM</td>
+          </tr>
+          <tr>
+            <td>Subject 2</td>
+            <td>Teacher 5</td>
+            <td>MWF<br>11:00 AM-12:00 PM</td>
+          </tr>
+          <tr>
+            <td>Subject 4</td>
+            <td>Teacher 6</td>
+            <td>TTh<br>12:00 PM-1:00 PM</td>
+          </tr>
+          <tr>
+            <td>Subject 1</td>
+            <td>Teacher 3</td>
+            <td>TTh<br>1:00 PM-2:00 PM</td>
+          </tr>
+    </table>
+
+
+
+
+    <br>
+
+
+
+
+    <div class="button-container">
+        <a href="{% url 'teachclassedit'%}" class="btn">Edit</a>
+        <a href="{% url 'teachclassassign'%}" class="btn">Add Students</a>
+    </div>
+
+
+    <br>
+
+
+
+
+</div>
 </body>
 </html>

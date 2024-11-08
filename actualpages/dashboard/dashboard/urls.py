@@ -33,4 +33,5 @@ urlpatterns = [
     path('uploadPay',index.uploadpay, name='uploadpay'),
     path('studentInfoParent', index.stud1info, name='stud1info'),
     path('assignStudent',index.teachclassassign, name='teachclassassign'),
+    path('editSched',index.teachclassedit, name='teachclassedit'),
 ]
